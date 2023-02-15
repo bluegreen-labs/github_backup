@@ -20,4 +20,4 @@ This call will store zipped archived repositories in `/drive/backups` on weekly 
 
 ## Authorization
 
-For private repositories authorization will be required. If no personal access token is provided (to be stored in `~/.ssh/github.bak` with read/write access, but no delete access) the existing ssh key on the system will work. Note that no additional passwords can be provided for the ssh key to function.
+For private repositories authorization will be required. If no personal access token is provided (to be stored in `~/.ssh/github.bak` with read/write access, but no delete access) the existing ssh key on the system will work. Note that no additional passwords can be provided for the ssh key to function. All the usual caveats apply when managing access tokens and keys.
