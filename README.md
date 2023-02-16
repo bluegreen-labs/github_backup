@@ -20,4 +20,4 @@ This call will store zipped archived repositories in `/drive/backups` on weekly 
 
 ## Authorization
 
-For private repositories authorization will be required. If no personal access token is provided (to be stored in `~/.ssh/github.bak` with read/write access, but no delete access) the existing ssh key on the system will work. Note that no additional passwords can be provided for the ssh key to function. All the usual caveats apply when managing access tokens and keys.
+For private repositories authorization will be required. If no personal access token is provided (to be stored in `~/.ssh/github.bak` with read/write access, but no delete access) the existing ssh key on the system will work. Note that no additional passwords can be provided for the ssh key to function. All the usual caveats apply when managing access tokens and keys. Minimizing exposure and leaking of high value credentials can be accomplished by creating a dedicated backup github account with granular permissions, or the us of granular personal access tokens with granular settings. Sadly, the latter are limited in time to less than a year and therefore are not a hands-off solution for backups.
