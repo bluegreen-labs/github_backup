@@ -10,9 +10,23 @@ then
  PAT=`cat ~/.ssh/github.bak`
 fi
 
-# command line parameter specifying the
-# backup settings file (list of repos)
-backupFile=$1
+if [ -f "~/.ssh/github.bak" ];
+then
+ git clone https://${PAT}@github.com/bluegreen-labs/backup_list.git .
+ cp backup_list/backup_list.txt .
+ rm -rf ./backup_list/
+ backupFile=`echo SRC_DIR=$(cd ..; pwd)/backup_list.txt`
+fi
+
+if [ -f "~/.ssh/github.bak" ] && [ ! -z "$1" ]
+then
+ # command line parameter specifying the
+ # backup settings file (list of repos)
+ backupFile=$1
+ else
+ echo "No PAT or backup file list provided!!"
+ exit 1
+fi
 
 # the backup directory is the location of
 # the backup settings file
